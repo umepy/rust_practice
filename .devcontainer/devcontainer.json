@@ -12,7 +12,8 @@ y// For format details, see https://aka.ms/devcontainer.json. For config options
 		"vscode": {
 			"extensions": [
 				"rust-lang.rust-analyzer",
-				"GitHub.copilot"
+				"GitHub.copilot",
+				"eamodio.gitlens"
 			]
 		}
 	}
