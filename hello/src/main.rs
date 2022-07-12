@@ -19,4 +19,18 @@ fn main() {
     for i in 0..arr2.len() {
         println!("{}", arr2[i]);
     }
+
+    // Structs
+    struct Person {
+        name: String,
+        age: i32,
+    }
+
+    enum Event {
+        Quit,
+        KeyDown(u8),
+        MouseDown { x: i32, y: i32 },
+    }
+    let e1 = Event::KeyDown(10);
+    let e2 = Event::MouseDown { x: 10, y: 20 };
 }
