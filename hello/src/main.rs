@@ -33,4 +33,11 @@ fn main() {
     }
     let e1 = Event::KeyDown(10);
     let e2 = Event::MouseDown { x: 10, y: 20 };
+
+    let result: Result<i32, String> = Ok(200);
+    fn error_handling(result: Result<i32, String>) -> Result<i32, String> {
+        let code = result?;
+        println!("code {}", code);
+        Ok(100)
+    }
 }
