@@ -40,6 +40,4 @@ fn main() {
         println!("code {}", code);
         Ok(100)
     }
-
-    let result = error_handling(result);
 }
