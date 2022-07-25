@@ -40,4 +40,11 @@ fn main() {
         println!("code {}", code);
         Ok(100)
     }
+
+    let v1 = vec![1, 2, 3];
+    let v2 = vec![0; 5];
+}
+
+fn print(s: Box<[u8]>) {
+    println!("{:?}", s);
 }
