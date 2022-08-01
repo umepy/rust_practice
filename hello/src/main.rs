@@ -1,3 +1,5 @@
+use core::num;
+
 fn main() {
     // Numerical types
     let i1 = 5;
@@ -43,6 +45,60 @@ fn main() {
 
     let v1 = vec![1, 2, 3];
     let v2 = vec![0; 5];
+
+    // mut and immute
+    let immut_val = 10;
+    let mut mut_val = 20;
+    mut_val += immut_val;
+
+    // type
+    let v1: u64 = 10;
+    let v2 = 20u64;
+
+    let number = 1;
+    if 0 < number {
+        println!("{}", number);
+    } else if number > 0 {
+        println!("{}", number);
+    } else {
+        println!("{}", number);
+    }
+
+    // if are formula
+    let number = 1;
+    let number = if number == 1 { 10 } else { 20 };
+
+    // example of loop
+    let mut count = 0;
+    let result = loop {
+        println!("{}", count);
+        count += 1;
+        if count == 10 {
+            break count;
+        }
+    };
+
+    let mut count = 0;
+    while count < 10 {
+        println!("{}", count);
+        count += 1;
+    }
+
+    let count: i32;
+    for count in 0..10 {
+        println!("{}", count);
+    }
+
+    // rust can name loop and for and while
+    'main: loop {
+        println!("loop");
+        'sub: for i in 0..10 {
+            println!("{}", i);
+            if i == 5 {
+                break 'main;
+            }
+        }
+    }
 }
 
 fn print(s: Box<[u8]>) {
