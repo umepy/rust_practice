@@ -99,6 +99,27 @@ fn main() {
             }
         }
     }
+
+    //match
+    let i: i32 = 1;
+    match i {
+        1 => println!("1"),
+        2 => println!("2"),
+        3 => println!("3"),
+        _ => println!("misc"),
+    }
+
+    enum Color {
+        Red,
+        Green,
+        Blue,
+    }
+    let c = Color::Red;
+    match c {
+        Color::Red => println!("red"),
+        Color::Green => println!("green"),
+        Color::Blue => println!("blue"),
+    }
 }
 
 fn print(s: Box<[u8]>) {
