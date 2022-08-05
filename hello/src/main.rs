@@ -120,6 +120,28 @@ fn main() {
         Color::Green => println!("green"),
         Color::Blue => println!("blue"),
     }
+
+    // range
+    for number in 1..10 {
+        println! {"{}", number};
+    }
+    //iterator
+    struct Iter {
+        current: usize,
+        max: usize,
+    }
+    impl Iterator for Iter {
+        type Item = usize;
+
+        fn next(&mut self) -> Option<usize> {
+            self.current += 1;
+            if self.current - 1 < self.max {
+                Some(self.current - 1)
+            } else {
+                None
+            }
+        }
+    }
 }
 
 fn print(s: Box<[u8]>) {
