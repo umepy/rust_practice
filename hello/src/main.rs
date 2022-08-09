@@ -147,3 +147,25 @@ fn main() {
 fn print(s: Box<[u8]>) {
     println!("{:?}", s);
 }
+
+fn add(a: i32, b: i32) -> i32 {
+    a + b
+}
+
+struct Person {
+    name: String,
+    age: u32,
+}
+
+impl Person {
+    fn say_name(&self) -> &Self {
+        println!("{}", self.name);
+        //method chain
+        self
+    }
+
+    fn say_age(&self) -> &Self {
+        println!("{}", self.age);
+        self
+    }
+}
