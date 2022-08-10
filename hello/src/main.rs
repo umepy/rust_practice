@@ -142,6 +142,11 @@ fn main() {
             }
         }
     }
+
+    // macro
+    let s = concat!("hello", "world");
+    let v = vec![1, 2, 3];
+    assert!(100 - 12 == 88);
 }
 
 fn print(s: Box<[u8]>) {
