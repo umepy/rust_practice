@@ -1,4 +1,5 @@
 use core::num;
+use std::thread;
 
 fn main() {
     // Numerical types
@@ -147,6 +148,17 @@ fn main() {
     let s = concat!("hello", "world");
     let v = vec![1, 2, 3];
     assert!(100 - 12 == 88);
+
+    let mut handles = Vec::new();
+    for x in 1..10 {
+        handles.push(thread::spawn(move || {
+            println!("heLLLO: {}", x);
+        }));
+    }
+
+    for handle in handles {
+        let _ = handle.join();
+    }
 }
 
 fn print(s: Box<[u8]>) {
