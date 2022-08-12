@@ -1,6 +1,7 @@
 use core::num;
+use std::rc::Rc;
+use std::sync::{Arc, Mutex};
 use std::thread;
-
 fn main() {
     // Numerical types
     let i1 = 5;
@@ -156,6 +157,20 @@ fn main() {
         }));
     }
 
+    for handle in handles {
+        let _ = handle.join();
+    }
+
+    let mut handles = Vec::new();
+    let mut shared_data = Arc::new(Mutex::new(vec![1; 10]));
+
+    for x in 0..10 {
+        let data_ref = shared_data.clone();
+        handles.push(thread::spawn(move || {
+            let mut shared_data = data_ref.lock().unwrap();
+            shared_data[x] += 1;
+        }));
+    }
     for handle in handles {
         let _ = handle.join();
     }
