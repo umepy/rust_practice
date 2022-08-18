@@ -182,6 +182,7 @@ fn main() {
     let mut snd_channels = Vec::new();
     let mut rcv_channels = Vec::new();
 
+    // channel test
     for _ in 1..10 {
         let (snd_tx, snd_rx) = mpsc::channel();
         let (rcv_tx, rcv_rx) = mpsc::channel();
